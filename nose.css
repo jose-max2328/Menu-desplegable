@@ -1,0 +1,96 @@
+::after,
+::before{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.nav{
+    background-color: black;
+}
+.nav-logo{
+    width: 80px;
+}
+.nav-conteiner{
+    width: min(90%, 1200px);
+    margin: 0 auto;
+    
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    
+    
+    --icon--toggle--menu: url("./assesst/menu-closer.svg");
+    --transform-menu: translate(-100%);
+}
+
+.nav-conteiner:has(.nav-input:checked){
+   
+    --icon--toggle--menu: url("./assesst/x.svg");
+    --transform-menu: translate(0%);
+}
+
+.nav-figure, .nave-toggle{
+    z-index: 10;
+}
+
+.nav-input{
+    display: none;
+}
+
+
+.nave-toggle{
+    width: 30px;
+    height: 30px;
+    background-image: var(--icon--toggle--menu);
+    background-size: cover;
+    cursor: pointer;
+    transition: background-image .5s;
+}
+
+.nav-input{
+    width: 30px;
+    height: 30px;
+}
+.nav-list{
+    transform: var(--transform-menu);
+    
+    position: fixed;
+    inset: 0; 
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    text-align: center;
+    
+    padding: 01.5rem 5%;
+    background-color: black;
+    list-style: none;
+   
+   
+    
+    transition: .5s transform;
+    
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+/* @media (width <764px){
+    .nav-conteiner( --transform-menu: translate(0);)
+    
+}
+
+.nave-toggle{
+    display: none;
+}
+
+.nav-list{
+    position: static;
+    grid-auto-flow: column;
+    place-content: unset;
+    padding: 0%;
+
+    transition: unset;
+} */
